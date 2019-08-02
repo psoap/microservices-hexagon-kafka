@@ -5,5 +5,7 @@ import org.springframework.http.ResponseEntity;
 public interface UserControllerPort {
     ResponseEntity create(User user);
 
-    ResponseEntity delete(User user);
+    ResponseEntity check(Long id);
+
+    ResponseEntity delete(Long id);
 }

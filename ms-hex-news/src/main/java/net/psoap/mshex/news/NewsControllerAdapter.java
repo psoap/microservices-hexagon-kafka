@@ -26,8 +26,8 @@ public class NewsControllerAdapter implements NewsControllerPort {
     }
 
     @Override
-    public ResponseEntity delete(News news) {
-        newsService.delete(news);
+    public ResponseEntity delete(Long id) {
+        newsService.delete(id);
         return ResponseEntity.noContent().build();
     }
 }

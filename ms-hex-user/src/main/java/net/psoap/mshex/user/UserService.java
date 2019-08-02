@@ -7,5 +7,7 @@ public interface UserService {
 
     Optional<User> findByLogin(String login);
 
-    void delete(User user);
+    Optional<User> findById(Long id);
+
+    void deleteById(Long id);
 }

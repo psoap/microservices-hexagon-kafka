@@ -17,6 +17,7 @@
     <modules>
         <module>ms-hex-news</module>
         <module>ms-hex-user</module>
+        <module>ms-hex-email</module>
     </modules>
 
 </project>

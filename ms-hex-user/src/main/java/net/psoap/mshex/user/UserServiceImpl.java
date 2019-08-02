@@ -17,11 +17,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<User> findByLogin(String login) {
-        return Optional.empty();
+        return userRepository.findByLogin(login);
     }
 
     @Override
-    public void delete(User user) {
-        userRepository.delete(user);
+    public Optional<User> findById(Long id) {
+        return userRepository.findById(id);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        userRepository.deleteById(id);
     }
 }

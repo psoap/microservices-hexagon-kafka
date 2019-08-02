@@ -9,5 +9,5 @@ public interface NewsControllerPort {
 
     ResponseEntity create(News News);
 
-    ResponseEntity delete(News News);
+    ResponseEntity delete(Long id);
 }
