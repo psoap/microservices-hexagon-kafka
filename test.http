@@ -1,0 +1,15 @@
+POST http://localhost:9076/news
+Content-Type: application/json
+
+{
+  "title": "hello",
+  "description": "world",
+  "authorId": "22"
+}
+
+###
+GET http://localhost:9076/news
+Content-Type: application/json
+
+###
+

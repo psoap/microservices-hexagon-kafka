@@ -1,11 +1,13 @@
 package net.psoap.mshex.user;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
+@Slf4j
 public class DbInitializer implements CommandLineRunner {
     private final UserRepositoryPort userRepository;
 
@@ -27,7 +29,6 @@ public class DbInitializer implements CommandLineRunner {
         userRepository.save(user6);
         userRepository.save(user7);
 
-        System.out.println(userRepository.findById(1L));
-        System.out.println(userRepository.findById(7L));
+        log.info("Users-db has initialized");
     }
 }

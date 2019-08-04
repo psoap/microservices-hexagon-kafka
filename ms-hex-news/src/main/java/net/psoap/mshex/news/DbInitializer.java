@@ -1,6 +1,7 @@
 package net.psoap.mshex.news;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -8,6 +9,7 @@ import java.time.LocalDateTime;
 
 @Component
 @RequiredArgsConstructor
+@Slf4j
 public class DbInitializer implements CommandLineRunner {
     private final NewsRepositoryPort newsRepository;
 
@@ -29,7 +31,6 @@ public class DbInitializer implements CommandLineRunner {
         newsRepository.save(news6);
         newsRepository.save(news7);
 
-        System.out.println(newsRepository.findById(1L));
-        System.out.println(newsRepository.findById(7L));
+        log.info("News-db has initialized");
     }
 }
