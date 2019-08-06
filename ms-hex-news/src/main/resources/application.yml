@@ -1,0 +1,18 @@
+application:
+  kafka:
+    user-removed-topic: user-removed-topic
+
+server:
+  port: 9076
+
+spring:
+  application:
+    name: News microservice
+  datasource:
+    url: jdbc:derby:memory:news-db;create=true
+  jpa:
+    hibernate:
+      ddl-auto: update
+  kafka:
+    consumer:
+      value-deserializer: org.apache.kafka.common.serialization.LongDeserializer

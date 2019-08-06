@@ -1,0 +1,18 @@
+application:
+  kafka:
+    user-removed-topic: user-removed-topic
+
+server:
+  port: 9075
+
+spring:
+  application:
+    name: User microservice
+  datasource:
+    url: jdbc:derby:memory:users-db;create=true
+  jpa:
+    hibernate:
+      ddl-auto: update
+  kafka:
+    producer:
+      value-serializer: org.apache.kafka.common.serialization.LongSerializer

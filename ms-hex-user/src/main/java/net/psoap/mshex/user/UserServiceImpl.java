@@ -1,6 +1,9 @@
 package net.psoap.mshex.user;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -9,6 +12,10 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserRepositoryPort userRepository;
+    @Autowired
+    private KafkaTemplate<String, Long> kafkaTemplate;
+    @Value("${application.kafka.user-removed-topic}")
+    private String userRemovedTopic;
 
     @Override
     public User create(User user) {
@@ -28,5 +35,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteById(Long id) {
         userRepository.deleteById(id);
+        kafkaTemplate.send(userRemovedTopic, id);
     }
 }

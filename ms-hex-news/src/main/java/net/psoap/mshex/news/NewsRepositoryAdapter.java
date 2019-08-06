@@ -15,4 +15,7 @@ public interface NewsRepositoryAdapter extends NewsRepositoryPort, JpaRepository
     void delete(News news);
 
     void deleteById(Long id);
+
+    @Override
+    void deleteByAuthorId(Long id);
 }

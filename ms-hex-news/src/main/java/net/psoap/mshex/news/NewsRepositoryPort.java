@@ -9,4 +9,5 @@ public interface NewsRepositoryPort {
     List<News> findAll();
     void delete(News user);
     void deleteById(Long id);
+    void deleteByAuthorId(Long id);
 }

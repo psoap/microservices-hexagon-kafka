@@ -3,7 +3,6 @@ package net.psoap.mshex.news;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import net.psoap.mshex.news.boundary.News;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
